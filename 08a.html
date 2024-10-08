@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* span{
+            color: blue;
+            cursor: pointer;
+            line-break: anywhere;
+        } */
+        /* a{
+            color: blue;
+        } */
+    </style>
+</head>
+<body>
+    <!-- a標籤一定要配合href的屬性(超連結)，否則跟span一樣，自帶style及javascript， a超連結的狀態有三個，link(沒點過), acive(壓下), visted(已點過)-->
+    <!-- 絕對路徑表示法 -->
+    <a href="http://www.google.com.tw">Click Me Go To Google</a>
+
+    <a >222</a>
+    <!-- 用span也可以彷出a的功能 -->
+    <span style="color:blue; cursor: pointer;" onclick="window.location.href='http://www.google.com.tw'"><u>Click Me Go To Google</u></span>
+    <hr>
+
+    <!-- 相對路徑表示法，直接切成自寫的html，放同一層的資料夾就好 -->
+    <a href="02Header.html">點我開啟作業2</a>
+    <!-- 絕對路徑表示法 -->
+    <a href="http://127.0.0.1:5500/WebHomework/02Header.html">點我開啟作業2</a>
+    <a href="http://127.0.0.1:5500/WebHomework/03pre.html">點我開啟作業3</a>
+
+
+
+</body>
+</html>

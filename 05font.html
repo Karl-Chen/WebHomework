@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--b 粗體，i 斜體， u 底線-->
+    <b>Welcome My HomePage!!</b>
+    <i>Welcome My HomePage!!</i>
+    <u>Welcome My HomePage!!</u>
+    <hr>
+    <b>歡迎光臨我的首頁</b>
+    <strong>歡迎光臨我的首頁</strong>
+    <!-- 先b後i或先i後b，不影響結果，但影響D(document)O(Object)M(Model) -->
+    <b>
+        <i>
+            歡迎光臨我的首頁
+        </i>
+    </b>
+    <i>歡迎光臨我的首頁</i>
+    <u>歡迎光臨我的首頁</u>
+    <br>
+    <!-- <script>
+
+        var ftext = "";
+        var etext = "";
+        for (var i = 0; i < 50; i++) {
+            if (i % 3 == 0) {
+                ftext = "<b>";
+                etext = "</b>";
+            }
+            if (i % 3 == 1) {
+                ftext = "<i>";
+                etext = "</i>";
+            }
+            else if (i % 3 == 2) {
+                ftext = "<u>";
+                etext = "</u>";
+            }
+            document.write(ftext + "觀迎光臨" + etext);
+            document.write("<br>");
+        }
+
+    </script> -->
+    <!-- 條列展示：ul是沒有順序性(前置沒有數字)，ol是有順序性(前置有12345)，li是項目內容 -->
+    <div id="contain">
+        <ul id="menu">
+            <li>沒有順序性
+                <ol>
+                    <li>有順序性</li>
+                    <li>有順序性</li>
+                    <li>有順序性</li>
+                    <li>有順序性</li>
+                    <li>有順序性</li>
+                </ol>
+            </li>
+            <li>沒有順序性</li>
+            <li>沒有順序性</li>
+            <li>沒有順序性</li>
+        </ul>
+        <ol>
+            <li>有順序性
+                <ol>
+                    <li>有順序性</li>
+                    <li>有順序性</li>
+                    <li>有順序性</li>
+                    <li>有順序性</li>
+                    <li>有順序性</li>
+                </ol>
+            </li>
+            <li>有順序性</li>
+            <li>有順序性</li>
+            <li>有順序性</li>
+            <li>有順序性</li>
+        </ol>
+    </div>
+
+
+</body>
+
+</html>
