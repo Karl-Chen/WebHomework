@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--h標籤是依據父節點的字體大小來做調整，以父節點的字體為基準，如果是寫在標籤裡面的style就是絕對值了
+如果該標籤有這個style，則以寫進去的為主-->
+<body style="font-size: 12pt;">
+    <h1>Welcome My Homepage!!</h1>
+    <h2>Welcome My Homepage!!</h2>
+    <h3>Welcome My Homepage!!</h3>
+    <span style="font-size: 20pt;">Welcome My HomePage!!</span>
+    Welcome My HomePage!!
+    <h6>Welcome My HomePage!!</h6>
+    <hr>
+    <h1>Welcome My Homepage!!</h1>
+    <hr>
+    <!--以下棄用-->
+    <h1 style="font-size: x-large">Welcome My Homepage!!</h1>
+    <h1 style="font-size: xx-large;">Welcome My Homepage!!</h1>
+    <h1 style="font-size: large;">Welcome My Homepage!!</h1>
+    <h1 style="font-size: larger;">Welcome My Homepage!!</h1><!--相對值比父節點大一點，反正比larger大一點-->
+    <h1 style="font-size: medium;">Welcome My Homepage!!</h1><!--相當於父節點的大小-->
+    <h1 style="font-size: small;">Welcome My Homepage!!</h1>
+    <h1 style="font-size: smaller;">Welcome My Homepage!!</h1><!--相對值比父節點小一點，反正比small大一點-->
+    <h1 style="font-size: x-small;">Welcome My Homepage!!</h1>
+    <h1 style="font-size: xx-small;">Welcome My Homepage!!</h1>
+    <!--以上棄用-->
+    <hr>
+    <!-- CSS文字大小相對表達法-->
+    <h1 style="font-size: 1em">Welcome My Homepage!!</h1><!--1倍基準值，父節點*1-->
+    <h1 style="font-size: 2em">Welcome My Homepage!!</h1><!--2倍基準值，父節點*2-->
+    <h1 style="font-size: 1.5em">Welcome My Homepage!!</h1><!--1.5倍基準值，父節點*1.5-->
+    <hr>
+    <!--階層愈多，基值愈容易改變-->
+    <div style="font-size: 2em;">
+        456431314dfhdj54df5d4fxcghdjti
+        467468h56df4d5i4r56dtd
+        sdfjusdt
+        <h3 style="font-size: 2em;">56435d4sfhdkd5f4dfgk4d</h3>
+
+    </div>
+    <!-- rem是用根節點(body)去計算倍率 -->
+    <div style="font-size: 2rem;">
+        456431314dfhdj54df5d4fxcghdjti
+        467468h56df4d5i4r56dtd
+        sdfjusdt
+        <h3 style="font-size: 3rem;">56435d4sfhdkd5f4dfgk4d</h3>
+
+    </div>
+    <hr>
+    <!-- 如果沒有該字型，則使用預設字型 -->
+    <h1 style="font-family: 'Times New Roman', Times, serif;">Welcome My HomePage!!</h1>
+    <h1 style="font-family: 'Algerian';">Welcome My HomePage!!</h1>
+    <h1 style="font-family: 'Times New Roman';">Welcome My HomePage!!</h1>
+    <h1 style="font-family: 標楷體;">標楷體</h1>
+    <h1 style="font-family: 新細明體;">新細明體</h1>
+    <h1 style="font-family: 微軟正黑體;">微軟正黑體</h1>
+    <h1 style="font-family: 華康布丁體;">華康布丁體</h1>
+
+
+</body>
+</html>

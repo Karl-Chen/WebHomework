@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 網頁表單元件 -->
+    <!-- text->輸入框edit（單行） password->密碼-->
+    <input type="text" value="abcd">
+    <input type="password" value="==">
+    <hr>
+    <!-- type是button reset submit都是按鈕，但用途不同 -->
+    <input type="button" value="欠按" title="我是個按鈕" style="background-color: blueviolet;color: beige;" onclick="alert('我說欠按你就按喔')"> <!--前端程式在用-->
+    <!-- 重置表單，恢復預設 -->
+    <input type="reset" value="重設">
+    <!-- 把表單資料送到伺服端 -->
+    <input type="submit" value="送出">
+    <hr>
+    <!-- 這三個type會隨瀏覽器不同，style也會有所不同 -->
+    <!-- 拉br條  -->
+    <input type="range">
+    <!-- 色碼表 -->
+    <input type="color">
+    <!-- 日期時間表 -->
+    <input type="datetime-local">
+
+    <hr>
+    <!-- radio的name可以當作圈選的group用，但元件的名字也是可以用name來給，跟ID不同，ID是物件的身份證字號 -->
+    <span>最高學歷:</span>
+    <input type="radio" name="level">博士
+    <input type="radio" name="level">碩士
+    <input type="radio" name="level">學士
+    <input type="radio" name="level">專科(含)以下
+
+    <hr>
+
+    <span>請選擇您的興趣:</span>
+    <input type="checkbox">唱歌
+    <input type="checkbox">模型
+    <input type="checkbox">遊戲
+    <input type="checkbox">打球
+    <input type="checkbox">打混
+
+    <hr>
+    <!-- 多行文字方塊 -->
+    <textarea rows="8" cols="40">
+
+    </textarea>
+
+    <hr>
+    <!-- combobox下拉式選單 -->
+    <select>
+        <option>aaaaa1111</option>
+        <option>aaaaa2222222</option>
+        <option>aaaa333</option>
+        <option>aa4444444444444</option>
+    </select>
+    <hr>
+
+    <!-- 表單要用form包起來，有包起來 reset跟submit才有作用-->
+    <form>
+        <fieldset>
+            <legend>加入會員</legend>
+            <table width="500">
+                <tbody>
+                    <tr>
+                        <td>姓名</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>姓別</td>
+                        <td>
+                            <input type="radio" name="sex">女
+                            <input type="radio" name="sex">男
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>生日</td>
+                        <td><input type="datetime-local"></td>
+                    </tr>
+                    <tr>
+                        <td>學歷</td>
+                        <td><select>
+                            <option>博士</option>
+                            <option>碩士</option>
+                            <option>學士</option>
+                            <option>專科(含)以下</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td>地址</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>興趣</td>
+                        <td>
+                            <input type="checkbox">唱歌
+                            <input type="checkbox">模型
+                            <input type="checkbox">打球
+                            <input type="checkbox">電動
+                            <input type="checkbox">出去玩
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>幸運色</td>
+                        <td><input type="color"></td>
+                    </tr>
+                    <tr>
+                        <td>年收入</td>
+                        <td><input type="range"></td>
+                    </tr>
+                    <tr>
+                        <td>備註</td>
+                        <td><textarea></textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="reset" value="取消">
+            <input type="submit" value="送出">
+        </fieldset>
+    </form>
+
+</body>
+
+</html>

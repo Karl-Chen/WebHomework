@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 掃描h1的標籤，掃到的標籤做顏色的設定 */
+        /* CSS基底三種選擇器
+        1. Tag Select
+        2. Class Select(類別選擇器)
+        3. ID Select (同一個網頁，id不能重覆)
+        */
+
+        h1
+        {
+            color:red;
+            font-size: 2.5rem;
+            background-color: yellow;
+        }
+        #tb1td
+        {
+            background-color: aqua;
+        }
+        #tb1->tbody->tr->td
+        {
+            background-color: darkcyan;
+        }
+    </style>
+</head>
+<body>
+    <!-- 選擇器的寫法 -->
+    <h1>Welcome My HomePage!!</h1>
+    <h1>Welcome My HomePage!!</h1>
+    <h1>Welcome My HomePage!!</h1>
+    <h1>Welcome My HomePage!!</h1>
+    <h2>Welcome My HomePage!!</h2>
+    <p>Welcome My HomePage!!</p>
+    <h1>Welcome My HomePage!!</h1>
+    <h1>Welcome My HomePage!!</h1>
+    <h1>Welcome My HomePage!!</h1>
+    <h1>Welcome My HomePage!!</h1>
+
+    <table border="1" width="300" height="200" id="tb1">
+        <tfoot>
+            <!-- colspan往右合併格子 -->
+            <td id="tb1td" colspan="3">製表人：小明</td>
+
+        </tfoot>
+
+        <tbody>
+
+            <tr>
+                <!-- content Text DOM 物件名稱 -->
+                <!-- 沒對齊，畫出來會很怪 -->
+                <td>張三</td>
+                <td>88</td>
+                <td>95</td>
+
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>76</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td>王五</td>
+                <td>78</td>
+                <td>91</td>
+
+            </tr>
+        </tbody>
+
+        <thead>
+            <tr>
+                <td>姓名</td>
+                <td>國文</td>
+                <td>數學</td>
+            </tr>
+        </thead>
+        <!-- <caption></caption> 表格主題，會放在表格上方的置中-->
+        <caption>成績單</caption>
+    </table>
+
+    <table border="1" width="300">
+        <thead>
+            <tr>
+                <td>測試一</td>
+                <td>測試二</td>
+                <td>測試三</td>
+            </tr>
+            <tr>
+                <td>測試四</td>
+                <td>測試五</td>
+                <td>測試六</td>
+            </tr>
+        </thead>
+        <tr>
+            <td>測試一一</td>
+            <td>測試二一</td>
+            <td>測試三一</td>
+        </tr>
+        <tr>
+            <td>測試一二</td>
+            <td>測試二二</td>
+            <td>測試三二</td>
+        </tr>
+        <tfoot>
+            <tr>
+                <td colspan="3">版權所有，翻印必究</td>
+            </tr>
+        </tfoot>
+        <caption>測試零</caption>
+    </table>
+</body>
+</html>

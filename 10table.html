@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <table></table>是畫表格線 border="1"是畫框線，border=""不畫-->
+    <table border="1" width="400" height="400">
+        <tr>
+            <!-- content Text DOM 物件名稱 -->
+            <td>a</td>
+            <td>a</td>
+            <td>a</td>
+        </tr>
+        <tr>
+            <td>a</td>
+            <td>a</td>
+            <td>a</td>
+        </tr>
+        <tr>
+            <td>a</td>
+            <td></td>
+            <td>a</td>
+        </tr>
+    </table>
+
+    <table border="1" width="400" height="400">
+        <tr>
+            <!-- content Text DOM 物件名稱 -->
+            <td>a</td>
+
+        </tr>
+        <tr>
+            <td>a</td>
+
+        </tr>
+        <tr>
+            <td>a</td>
+
+        </tr>
+    </table>
+    <br>
+    <!-- 水平對齊(靠左)，垂直對齊(置中) -->
+    <!-- <tbody></tbody> 在寫的時候可以省略，但如果省略的，在HTML裡面會幫你把tr跟td丟進tbody 只要不是放在thead或tfoot就會自動幫你塞進tbody-->
+    <!-- 不論怎麼放，thead都會是在最上方，tfoot會在最下方 -->
+    <table border="1" width="600" height="400">
+        <tfoot>
+            <!-- colspan往右合併格子 -->
+            <td colspan="3">製表人：小明</td>
+
+        </tfoot>
+
+        <tbody>
+
+            <tr>
+                <!-- content Text DOM 物件名稱 -->
+                <!-- 沒對齊，畫出來會很怪 -->
+                <td>張三</td>
+                <td>88</td>
+                <td>95</td>
+
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>76</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td>王五</td>
+                <td>78</td>
+                <td>91</td>
+
+            </tr>
+        </tbody>
+
+        <thead>
+            <tr>
+                <td>姓名</td>
+                <td>國文</td>
+                <td>數學</td>
+            </tr>
+        </thead>
+        <!-- <caption></caption> 表格主題，會放在表格上方的置中-->
+        <caption>成績單</caption>
+    </table>
+
+    <table border="1" width="300">
+        <thead>
+            <tr>
+                <td>測試一</td>
+                <td>測試二</td>
+                <td>測試三</td>
+            </tr>
+            <tr>
+                <td>測試四</td>
+                <td>測試五</td>
+                <td>測試六</td>
+            </tr>
+        </thead>
+        <tr>
+            <td>測試一一</td>
+            <td>測試二一</td>
+            <td>測試三一</td>
+        </tr>
+        <tr>
+            <td>測試一二</td>
+            <td>測試二二</td>
+            <td>測試三二</td>
+        </tr>
+        <tfoot>
+            <tr>
+                <td colspan="2">版權所有，翻印必究</td>
+            </tr>
+        </tfoot>
+        <caption>測試零</caption>
+    </table>
+</body>
+
+</html>

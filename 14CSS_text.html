@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 文字樣態，例如底線，其中none是取消文字樣態 -->
+    <h1>Welcome My HomePage!!</h1>
+    <h1 style="text-decoration: overline;">Welcome My HomePage!!</h1>
+    <h1 style="text-decoration: underline;">Welcome My HomePage!!</h1>
+    <h1 style="text-decoration: line-through;">Welcome My HomePage!!</h1>
+    <hr>
+    <h1 style="text-decoration: none;">Welcome My HomePage!!</h1>
+    <u style="text-decoration: none;border: 1px solid black;">Welcome My HomePage!!</u>
+    <hr>
+    <a href="" style="text-decoration: none; font-size: 2rem;font-weight: 900;
+     color: black;cursor: text;display: block;margin-bottom: 16pt;">Welcome 
+        My HomePage!!</a>
+    <span>aaa</span>
+    <hr>
+    <!-- font-family: webdings變成icon字型，例如播放器之類的，以後做音樂播放器會用到 -->
+    <a href="" style="font-family: webdings; font-size: 5rem; text-decoration: none; color: darkorange;
+     border: 3px solid darkorange; box-shadow: 5px -5px 15px black; border-radius: 10px;">7</a>
+
+    <hr style="width: 500px; height: 10px; background-color: red;">
+    <div style="border: 3px solid black;">這是測試</div>
+    <div style="border: 3px solid black; text-align: center;">這是測試</div>
+    <!-- 靠在父節點最右邊 -->
+    <div style="border: 3px solid black; text-align: right;">這是測試</div>
+
+    <hr>
+    <!-- 也可以用rgb(21,55,ff) -->
+    <div style="height: 200px; background-color: #7c4da8;">
+        
+    </div>
+
+    <input type="button" value="小" id="btn1">
+    <!-- <input type="button" value="中" id="btn2">
+    <input type="button" value="大" id="btn3"> -->
+
+    <div id="news" style="font-size: 12pt;">
+        新加坡空軍部隊的兩架F-15SG戰鬥機在接獲通報後緊急升空，護送飛機遠離人口稠密地區。該飛機于當地時間15日22時左右安全降落在新加坡樟宜機場。
+
+　　印度航司近日頻受安全威脅
+
+　　同日，一架從新德里飛往芝加哥的印度航空航班因收到炸彈威脅緊急降落在加拿大伊卡盧伊特機場。
+
+　　據悉，該航班于當地時間淩晨5時30分左右降落，機上211名乘客和機組人員全部離開飛機。警方表示，該航班受到網上發佈的安全威脅，因此採取“預防措施”緊急降落。目前該航班已停飛，在炸彈威脅解除之前不得再次飛行。
+
+　　印度航空方面表示，該公司和其他印度航司最近幾天受到了一系列威脅，但目前所有威脅都是惡作劇。印度航空正在配合有關部門識別上述威脅的實施者，並將考慮對責任人採取法律行動。（總臺記者 趙淼 報道員 海月）
+    </div>
+    <script>
+        var btn1 = document.getElementById("btn1");
+        // var btn2 = document.getElementById("btn2");
+        // var btn3 = document.getElementById("btn3");
+        var index = 0;
+        var mod = ["1rem", "1.5rem", "2rem"];
+        var modstr = ["小", "中", "大"];
+        var news = document.getElementById("news");
+
+        // 把函式當參數傳進另一個函式裡面
+        // function(){}也可以寫成()=>{} 這就叫lemda
+        btn1.addEventListener('click', ()=>{
+            index++;
+            index %= 3;
+            news.style.fontSize = mod[index];
+            btn1.value  = modstr[index];
+        })
+        // btn2.addEventListener('click', function(){
+        //     news.style.fontSize="1.5rem";
+        // })
+        // btn3.addEventListener('click', function(){
+        //     news.style.fontSize="2rem";
+        // })
+
+    </script>
+
+
+</body>
+</html>
