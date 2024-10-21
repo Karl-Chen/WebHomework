@@ -7,39 +7,77 @@
 
     <style>
         /* 掃描h1的標籤，掃到的標籤做顏色的設定 */
-        /* CSS基底三種選擇器
+        /* CSS基底三種選擇器(tag<class<id)但是inline的優先權最高，不管怎樣，直接寫進inline就是絕對執行inline
         1. Tag Select
-        2. Class Select(類別選擇器)
-        3. ID Select (同一個網頁，id不能重覆)
+        2. Class Select(類別選擇器) 將要動作的物件先做分類，同一類的套用同一個style
+            ex: .font_style1 要注意，屬性會互吃，優先權排序：id>class>tag，剩下的取聯集，class name可以取得跟標籤一樣，反正表達方式不同
+            如果使用class聯集，例如：class="h2 haha"，會依style標籤裡面的上下順序來放，下蓋上，會先跑h2再跑haha
+            只有class可以這樣玩
+        3. ID Select (同一個網頁，id不能重覆) 可以透過id往下取範圍，用>符號，例如#tb1>tbody>tr>td
         */
 
-        h1
+        h1 /*tag select*/
         {
             color:red;
             font-size: 2.5rem;
             background-color: yellow;
         }
+        .font_style1/* class select*/
+        {
+            color:blue;
+            font-size: 3rem;
+        }
+        .h1
+        {
+            background-color: pink;
+        }
+        .h2
+        {
+            background-color: rgb(119, 160, 95);
+            color: coral;
+            font-size: 1.5rem;
+        }
+        .haha
+        {
+            background-color: rgb(64, 207, 135);
+            color: red;
+            border: 1px solid rgb(160, 148, 231);
+        }
+        #John
+        {
+            border-radius: 20px;
+            border: 2px solid black;
+            color: rgb(201, 19, 140);
+            background-color: azure;
+        }
         #tb1td
         {
             background-color: aqua;
         }
-        #tb1->tbody->tr->td
+        #tb1>tbody>tr>td
         {
-            background-color: darkcyan;
+            border: 3px groove blue;
+            background-color: yellowgreen;
+        }
+        #tb1>thead>tr>td
+        {
+            background-color:pink;
+            color: blueviolet;
         }
     </style>
 </head>
 <body>
     <!-- 選擇器的寫法 -->
+    <h1 class="haha h2" style="color: darkgray;">Welcome My HomePage!!</h1>
     <h1>Welcome My HomePage!!</h1>
+    <h1 class="font_style1">Welcome My HomePage!!</h1>
     <h1>Welcome My HomePage!!</h1>
-    <h1>Welcome My HomePage!!</h1>
-    <h1>Welcome My HomePage!!</h1>
-    <h2>Welcome My HomePage!!</h2>
+    <h2 class="font_style1">Welcome My HomePage!!</h2>
     <p>Welcome My HomePage!!</p>
-    <h1>Welcome My HomePage!!</h1>
-    <h1>Welcome My HomePage!!</h1>
-    <h1>Welcome My HomePage!!</h1>
+    <h1 id="John" class="font_style1">Welcome My HomePage!!</h1>
+    <h1 class="h1">Welcome My HomePage!!</h1>
+    <p class="h1">Welcome My HomePage!!</p>
+    <h1 class="h2">Welcome My HomePage!!</h1>
     <h1>Welcome My HomePage!!</h1>
 
     <table border="1" width="300" height="200" id="tb1">

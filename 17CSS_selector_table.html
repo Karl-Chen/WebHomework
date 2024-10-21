@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /**
+            tr是繼承td，所以td有設定，tr再設定時tr會不顯示，tr本身是個看不到的物件，沒繼承到border，但有繼承到background-color
+        */
+        #table1 {
+            border: 3px groove black;
+            width: 600px;
+            /* height: 500px; */
+            background-color: aqua;
+            text-align: center;
+        }
+
+        /*選的對像id叫table1的物件底下所有叫td標籤號的物件都是選擇的對像*/
+        #table1 td {
+            border: 2px solid black;
+
+        }
+
+        #table1 thead tr {
+            background-color: black;
+            color: white;
+            font-weight: 900;
+        }
+
+        #table1 thead td {
+            border: 2px solid red;
+        }
+        /*+ ~:兄弟節點；:first-child 是指tbody的第一個子節點，標籤名須要叫tr(第一列)，後面再+tr就變取到第二個子節點了，如果是改成~tr就變第二個之後的所有子節點*/
+        /* #table1 tbody tr:first-child + tr
+        {
+            font-weight: 900;
+        } */
+        #table1 tbody td:first-child
+        {
+            font-weight: 900;
+            color: blue;
+        }
+        /* 精細度高優先權高，精細度>順序 td:first-child > td*/
+        #table1 tbody td
+        {
+            color: green;
+        }
+        #table1 tbody tr:first-child +tr td:first-child + td 
+        {
+            color:red;
+        }
+        #table1 tbody tr:nth-child(4)
+        {
+            background-color: lightgray;
+        }
+        /* 偶數列 */
+        #table1 tbody tr:nth-child(2n)
+        {
+            background-color: rgb(218, 44, 44);
+        }
+        /* 奇數列 */
+        #table1 tbody tr:nth-child(2n+1)
+        {
+            background-color: rgb(214, 200, 223);
+        }
+        #table1 tbody tr:hover
+        {
+            background-color: yellow;
+            color: blueviolet;  /*在tr上沒有效果，如果是table1 tbody tr td:hover就會有效果*/
+            font-size: 1.2rem;
+        }
+        /* #table1 tbody td:first-child ~ td
+        {
+            color: green;
+        } */
+
+        #table1 tfoot tr {
+            text-align: left;
+        }
+
+        .pink {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        aaa
+        <div>
+            bbb
+            <div>
+                ccc
+                <div>
+                    ddd
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>aaa</div>
+    <div>bbb</div>
+    <div>ccc</div>
+    <div>ddd</div>
+    <table id="table2">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="pink"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td class="pink"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td class="pink"></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <hr>
+    <table id="table1">
+        <tfoot>
+            <!-- colspan往右合併格子 -->
+            <td id="tb1td" colspan="3">製表人：小明</td>
+
+        </tfoot>
+
+        <tbody>
+
+            <tr>
+                <!-- content Text DOM 物件名稱 -->
+                <!-- 沒對齊，畫出來會很怪 -->
+                <td>張三</td>
+                <td>88</td>
+                <td>95</td>
+
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>76</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td>王五</td>
+                <td>78</td>
+                <td>91</td>
+
+            </tr>
+            <tr>
+                <!-- content Text DOM 物件名稱 -->
+                <!-- 沒對齊，畫出來會很怪 -->
+                <td>張三</td>
+                <td>88</td>
+                <td>95</td>
+
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>76</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td>王五</td>
+                <td>78</td>
+                <td>91</td>
+
+            </tr>
+            <tr>
+                <!-- content Text DOM 物件名稱 -->
+                <!-- 沒對齊，畫出來會很怪 -->
+                <td>張三</td>
+                <td>88</td>
+                <td>95</td>
+
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>76</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td>王五</td>
+                <td>78</td>
+                <td>91</td>
+
+            </tr>
+        </tbody>
+
+        <thead>
+            <tr>
+                <td>姓名</td>
+                <td>國文</td>
+                <td>數學</td>
+            </tr>
+        </thead>
+        <!-- <caption></caption> 表格主題，會放在表格上方的置中-->
+        <caption>成績單</caption>
+    </table>
+    <hr>
+    <table id="table3">
+
+    </table>
+
+    <script>
+
+    </script>
+</body>
+
+</html>
