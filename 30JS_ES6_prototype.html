@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="clock"></h1>
+    <script>
+        //使用prototype增加一個方法
+        const clock = document.getElementById("clock");
+        function getTime() {
+            clock.innerText = timeFormat(new Date());
+            setTimeout(getTime, 1000);
+        }
+        // 可以寫成下面版本
+        // function timeFormat(myDate) {
+        //     let hour = myDate.getHours() < 10 ? "0" + myDate.getHours() : myDate.getHours();
+        //     let min = myDate.getMinutes() < 10 ? "0" + myDate.getMinutes() : myDate.getMinutes();
+        //     let sec = myDate.getSeconds() < 10 ? "0" + myDate.getSeconds() : myDate.getSeconds();
+        //     return hour + ":" + min + ":" + sec
+        // }
+        // 也可以寫成下面版本
+        // let timeFormat = function(myDate){
+        //     let hour = myDate.getHours() < 10 ? "0" + myDate.getHours() : myDate.getHours();
+        //     let min = myDate.getMinutes() < 10 ? "0" + myDate.getMinutes() : myDate.getMinutes();
+        //     let sec = myDate.getSeconds() < 10 ? "0" + myDate.getSeconds() : myDate.getSeconds();
+        //     return hour + ":" + min + ":" + sec
+        // }
+        let timeFormat = myDate => {
+            let hour = myDate.getHours() < 10 ? "0" + myDate.getHours() : myDate.getHours();
+            let min = myDate.getMinutes() < 10 ? "0" + myDate.getMinutes() : myDate.getMinutes();
+            let sec = myDate.getSeconds() < 10 ? "0" + myDate.getSeconds() : myDate.getSeconds();
+            return hour + ":" + min + ":" + sec
+        }
+
+        // 把function寫成指定運算時，function就沒有位置任意性了，會變得注重上下位置，所以要call timeFormat的地方要移到上方
+
+
+        getTime();
+
+        ////////////////////////////////////////////////
+        let mDate = new Date();
+        Date.prototype.timeFormat = function () {
+            let hour = this.getHours() < 10 ? "0" + this.getHours() : this.getHours();
+            let min = this.getMinutes() < 10 ? "0" + this.getMinutes() : this.getMinutes();
+            let sec = this.getSeconds() < 10 ? "0" + this.getSeconds() : this.getSeconds();
+            return hour + ":" + min + ":" + sec
+        }
+        Date.prototype.dateFormat = function () {
+            const week = ["日", "一", "二", "三", "四", "五", "六"];
+            return "民國" + (this.getFullYear() - 1911) + "年 西元" + this.getFullYear() + "年 " + (this.getMonth() + 1) + "月 " + this.getDate() + "日 星期" + week[this.getDay()];
+        }
+        // myDate.timeFormat
+        //console.log(mDate.timeFormat());
+        let getNowTime = () => {
+            let myDate = new Date();
+            clock.innerText = myDate.dateFormat() + ":" + myDate.timeFormat();
+            setTimeout(getNowTime, 1000);
+        }
+        getNowTime();
+    </script>
+</body>
+
+</html>

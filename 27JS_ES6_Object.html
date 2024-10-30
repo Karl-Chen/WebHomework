@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+       部門代碼	部門名稱
+          01	    資訊部
+          02	    管理部
+          03	    行銷部
+          04	    企劃部
+          05	    人事處
+          06	    研發處
+       */
+
+        /* var deptNo = ["01", "02", "03", "04", "05", "06"];*/
+        //var deptName = ["資訊部", "管理部", "行銷部", "企劃部", "人事處", "研發處"]; 
+
+        //JS ES6物件宣告方式
+
+        let dept01 = {
+            //屬性
+            deptID: "01",
+            deptName: "資訊部"
+        };
+
+        console.log(dept01.deptID + dept01.deptName);
+
+        let department = [
+            { deptID: "01", deptName: "資訊部" },
+            { deptID: "02", deptName: "管理部" },
+            { deptID: "03", deptName: "行銷部" },
+            { deptID: "04", deptName: "企劃部" },
+            { deptID: "05", deptName: "人事處" },
+            { deptID: "06", deptName: "研發處" }
+        ];
+
+        console.log(department);
+
+        for (let i = 0; i < department.length; i++)
+            console.log(department[i].deptID + department[i].deptName);
+        ///////////////////////////////////////////////////////////////////////////////
+
+
+        //物件的成員:屬性(property)及方法(method)
+
+        let Jack = {
+            //屬性(property)
+            sid: "S001",
+            name: "Jack",
+            email: "Jack@abc.com",
+            score: {
+                chinese: 85,
+                english: 80,
+                math: 78
+            },
+
+            //方法(method)
+            getTotalScore() {
+                return this.score.chinese + this.score.english + this.score.math
+            },
+
+            getStudentName() {
+                return this.name;
+            },
+            getStudentID() {
+                return this.sid;
+            },
+            getStudentEmail() {
+                if (this.email == "") {
+                    return "未填寫";
+                }
+                return this.email;
+            }
+        }
+
+
+
+
+        let Mary = {
+            //屬性(property)
+            sid: "S002",
+            name: "Mary",
+            email: "",
+            score: {
+                chinese: 95,
+                computer: 83,
+                programming: 60
+
+            },
+            //方法(method)
+            getTotalScore() {
+                return this.score.chinese + this.score.computer + this.score.programming
+            },
+            getStudentName() {
+                return this.name;
+            },
+            getStudentID() {
+                return this.sid;
+            },
+            getStudentEmail() {
+                // if (this.email == "") {
+                //     return "未填寫";
+                // }
+                return this.email == "" ? "未填寫" : this.email;;
+            }
+        }
+
+
+
+        let John = {
+            //屬性(property)
+            sid: "S003",
+            name: "John",
+            email: "John@abc.com",
+            score: {
+                chinese: 85,
+                programming: 75
+            },
+            //方法(method)
+            getTotalScore() {
+                return this.score.chinese + this.score.programming
+            },
+            getStudentName() {
+                return this.name;
+            },
+            getStudentID() {
+                return this.sid;
+            },
+            getStudentEmail() {
+                if (this.email == "") {
+                    return "未填寫";
+                }
+                return this.email;
+            }
+
+
+        }
+
+
+
+        ///////////////////////
+        let JackResult = Jack.getStudentID() + "-" + Jack.getStudentName() + "-" + Jack.getTotalScore() + "-" + Jack.getStudentEmail();
+        let MaryResult = Mary.sid + "-" + Mary.getStudentName() + "-" + Mary.getTotalScore() + "-" + Mary.getStudentEmail();
+        let JohnResult = John.getStudentID() + "-" + John.getStudentName() + "-" + John.getTotalScore() + "-" + John.getStudentEmail();
+        console.log(JackResult);
+        console.log(MaryResult);
+        console.log(JohnResult);
+
+
+    </script>
+</body>
+
+</html>

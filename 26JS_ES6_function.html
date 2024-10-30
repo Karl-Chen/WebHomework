@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        /*  setTimeout(() => {
+ 
+         }, timeout); */
+
+        /* setTimeout(() => {
+            document.write("<h1>Welcome My Homepage!!</h1>");
+        }, 3000);
+ */
+        setTimeout(() => document.write("<h1>Welcome My Homepage!!</h1>"), 3000);
+
+
+        /* function plus(a = 2, b = 3) {
+            console.log(a + b);
+
+        } */
+
+        /*  let plus = function (a=2, b=3) {
+             console.log(a + b);
+         } */
+
+        let plus = (a = 2, b = 3) => {
+            console.log(a + b);
+        }
+        plus();
+        plus(5);
+        plus(5, 10);
+
+
+        /*   let welcome = (name) => {
+              console.log(`${name}, Welcome My Homepage!!`);
+          } */
+
+        let welcome = name => {
+            console.log(`${name}, Welcome My Homepage!!`);
+        }
+
+        welcome("Jack");
+        ///////////////////////////////////////////////////////////
+
+        /* function a(m) {
+            console.log(m * 10);
+        } */
+
+        /*   let a = function (m) {
+              console.log(m * 10);
+  
+          }
+   */
+
+        let a = m => console.log(m * 10);
+
+
+        setTimeout(m => console.log(m * 10), 2000);
+
+       
+
+
+        ///////////////////////////
+        let f = [2, 1, 3];
+
+        for (let item of f)
+            console.log(item * item);
+
+
+
+        let g = f.map(i => i * i);
+        console.log(g);
+
+        //////////
+
+        let j = function (m, n) {
+            console.log(m * n);
+        }
+
+        let k = (m, n) => console.log(m * n);
+    </script>
+
+
+</body>
+
+</html>

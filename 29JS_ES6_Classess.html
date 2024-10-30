@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <h2 id="timer"></h2>
+    <h1 id="clock"></h1>
+    <script>
+        // Classless
+        const timer = document.getElementById("timer");
+        const clock = document.getElementById("clock");
+        let myDate = new Date();
+        let dateResult = dateFormat(myDate);
+
+        function timeFormat(myDate) {
+            let hour = myDate.getHours() < 10 ? "0" + myDate.getHours() : myDate.getHours();
+            let min = myDate.getMinutes() < 10 ? "0" + myDate.getMinutes() : myDate.getMinutes();
+            let sec = myDate.getSeconds() < 10 ? "0" + myDate.getSeconds() : myDate.getSeconds();
+            return hour + ":" + min + ":" + sec
+        }
+
+        function dateFormat(myDate) {
+            const week = ["日", "一", "二", "三", "四", "五", "六"];
+            return "民國" + (myDate.getFullYear() - 1911) + "年 西元" + myDate.getFullYear() + "年 " + (myDate.getMonth() + 1) + "月 " + myDate.getDate() + "日 星期" + week[myDate.getDay()];
+        }
+
+        function getNowTime() {
+            let myDate = new Date();    //用計設圖鑄造出物件
+            // console.log(nowTime);
+            timer.innerText = dateResult + " " + timeFormat(myDate);
+            setTimeout(getNowTime, 1000);
+        }
+        getNowTime();
+
+        function abc() {
+            clock.innerText = timeFormat(new Date());
+        }
+        abc();
+    </script>
+</body>
+
+</html>

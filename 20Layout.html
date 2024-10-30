@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            border: 1px solid black;
+            width: 1200px;
+            margin: auto;
+        }
+        /*#container>header只看container的header子節點，不看header孫節點，#container header是看後代的header節點*/
+        #container>header {
+            background-color: aquamarine;
+            height: 250px;
+        }
+        #container > nav {
+            background-color: blueviolet;
+            height: 600px;
+            width: 250px;
+            float: left;
+        }
+        #container > section {
+            background-color: brown;
+            height: 600px;
+            width: 950px;
+            float: right;
+        }
+        #container > div {
+            background-color: red;
+        }
+        #container > footer {
+            background-color: greenyellow;
+            height: 200px;
+            clear:both;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            這裡是上方標題區            
+        </header>
+
+        <nav>
+            選單用nav這裡是選單區
+        </nav>
+
+        <section>
+            內容可以用section 或是arlicate這裡主要內容呈現區
+        </section>
+        <div>123456</div>
+
+        <footer>
+            這裡是網站相關區
+        </footer>
+    </div>
+
+
+
+
+</body>
+
+</html>

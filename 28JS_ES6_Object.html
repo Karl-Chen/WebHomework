@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //物件裡this指向的問題
+        let obj1 = {
+            something: "Apple", 
+            showSomething() {
+                console.log(this.something);
+            }
+        }
+        obj1.showSomething();
+
+        let obj = {
+            something: "Apple",
+
+            showSomething() {
+                // this指向會發生改變，不再是指到obj
+                setTimeout(function() {
+                    console.log(this.something);
+                }, 2000);
+            }
+        }
+        obj.showSomething();
+
+        let obj2 = {
+            something: "Apple",
+
+            showSomething() {
+                // 使用=>時，this會變根節點
+                setTimeout(() => console.log(this.something), 2000);
+            }
+        }
+        obj2.showSomething();
+    </script>
+</body>
+</html>

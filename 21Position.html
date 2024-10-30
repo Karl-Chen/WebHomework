@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 1266px;
+            margin: auto;
+            position: relative;
+            z-index: 100;
+        }
+
+        #container>section {
+            display: flex;
+        }
+
+        #container>section>nav {
+            width: 209px;
+        }
+
+        #container>section>article {
+            width: 1057px;
+        }
+
+        #container footer {
+            width: 1266px;
+            clear: both;
+        }
+
+        /* absolute 絕對位置(會隨著scroll bar而改變) fixed 跟著瀏覽器動(會隨著scroll bar而改變) top:0是指跟body的上方要隔多少*/
+        #ad1 {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        #ad2 {
+            position: fixed;
+            top: 0;
+            right: 0;
+        }
+
+        /* 遮擋式廣告 */
+        #ad3 {
+            box-shadow: 0 0 10px black;
+            position: absolute;
+            top: 200px;
+            left: 106px;/*(containner的寬度-圖片寬度)/2*/
+            z-index: 200;/*圖層，比值，愈大的愈上層*/
+        }
+        #ad3>span {
+            background-color: pink;
+            color: red;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- div的寫法header  nav section article footer 這些都是div -->
+    <div id="container">
+        <!-- 遮蓋式廣告要放進contianer裡面(container要放position:releative) -->
+        <div id="ad3">
+            <span onclick="ad3Hidden()">點我關閉</span><br>
+            <img src="CSS/ad.jpg">
+        </div>
+        <header>
+            <img src="CSS/top.jpg">
+        </header>
+        <section>
+            <nav>
+                <img src="CSS/left.jpg">
+            </nav>
+
+            <article>
+                <img src="CSS/right.jpg">
+            </article>
+        </section>
+        <footer>
+            <img src="CSS/bottom.jpg">
+        </footer>
+        <script>
+            function ad3Hidden() {
+                var ad3 = document.getElementById("ad3");
+                ad3.className="hide";
+            }
+        </script>
+    </div>
+
+    <img src="CSS/banner1.jpg" id="ad1">
+    <img src="CSS/banner2.jpg" id="ad2">
+
+</body>
+
+</html>

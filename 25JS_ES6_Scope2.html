@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //變數的scope
+
+        var a = 5, b = 0;
+        let x = 2, y = 0;
+
+        function cal() {
+
+
+            var c = a + b;
+            let z = x + y;
+            console.log("c=" + c);
+            console.log("z=" + z);
+        }
+
+        cal();
+        //console.log("c=" + c);
+        // console.log("z=" + z);
+
+        /////////////////////////////////////////////////////
+
+        var d = [];
+
+        for (let i = 0; i < 10; i++) {
+            d[i] = i;
+        }
+
+        console.log(d);
+        /////////////////////////////////////////////
+        var f = [];
+
+        for (let i = 0; i < 10; i++) {
+            f[i] = function () {
+                console.log(i);
+
+            }
+        }
+        f[2]();
+
+        /////////////////////////////////////////////////
+
+        /*  function w(){
+             console.log(123);
+             
+         }
+ 
+         w(); */
+
+        let w = function () {
+            console.log(123);
+
+        }
+
+        w();
+        ///////////////////////////////////////
+
+        /*   let q= [1, 2, 3];
+          console.log(q[1]); */
+
+
+        /* let q = [function () {
+            console.log(0);
+
+        }, function () {
+            console.log(1);
+
+        }, function () {
+            console.log(2);
+
+        }, function () {
+            console.log(3);
+
+        }, function () {
+            console.log(4);
+
+        }, function () {
+            console.log(5);
+
+        }, function () {
+            console.log(6);
+
+        }, function () {
+            console.log(7);
+
+        }, function () {
+            console.log(8);
+
+        }, function () {
+            console.log(9);
+
+        }]; */
+
+        let q = [];
+     
+        for (let i = 0; i < 10; i++) {
+            q[i] = function () {
+                console.log(i);
+            }
+        }
+
+        q[0]();
+        q[1]();
+        q[2]();
+
+        q[3]();
+
+        q[4]();
+
+        q[5]();
+
+
+
+
+    </script>
+</body>
+
+</html>

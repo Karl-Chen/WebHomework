@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 迎合使用者裝置做寬度分配 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音樂播放器</title>
+
+    <style>
+        /* .btnPlay {
+            font-size: 3rem;
+            cursor: pointer;
+            font-family: Webdings;
+            border: 1px solid black;
+        } */
+        #controlPanel span {
+            font-size: 3rem;
+            cursor: pointer;
+            font-family: Webdings;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- http的行為分為get及post-->
+    <!-- 標籤的實際功能是做在瀏覽器裡面，所以使用標籤的格式，有可能會因不同瀏覽器有不同的UI -->
+    <audio id="audioPlayer" src="audio/retracks-fictionjunction-yuuka-曉之車-retracks.mp3" preload="auto" controls></audio>
+    <hr>
+    <div id="controlPanel">
+        <span onclick="backStart()">9</span>
+        <span onclick="funcChangeTime(-10)">7</span>
+        <span onclick="stopMusic()">&lt;</span> <!-- &lt; 就是 < -->
+        <span id="btnFunc" onclick="playMusic()">4</span>
+        <span onclick="funcChangeTime(10)">8</span>
+        <span onclick="forWardEnd()">:</span>
+        <span id="btnMute" onclick="muteVolume()">V</span><!--靜音-->
+        <hr>
+        <input type="button" value="-" onclick="setVolume(-5)">
+        <input type="button" value="+" onclick="setVolume(5)">
+    </div>
+    <!-- <span class="btnPlay" style="font-family: 'Webdings';" onclick="pauseMusic()">;</span> -->
+    <hr>
+
+    <script>
+        const vAudioPlayer = document.getElementById("audioPlayer");
+        const btnPlay = document.getElementById("btnFunc");
+        const btnMute = document.getElementById("btnMute");
+        // var isPlayPause = false;
+        var isRepeate = 1;  //1是不重覆播放 2是重覆播放單首 3是整個歌單重覆播放 4隨機播放
+
+        function pauseMusic() {
+            vAudioPlayer.pause();
+            // btnPlay.innerText = "4";
+            // btnPlay.onclick = playMusic;
+            changeFunc(btnPlay, "4", playMusic);
+            // document.write(typeof(playMusic));
+        }
+
+        function playMusic() {
+            vAudioPlayer.play();
+            // btnPlay.innerText = ";";
+            // btnPlay.onclick = pauseMusic;
+            changeFunc(btnPlay, ";", pauseMusic);
+        }
+
+        function changeFunc(btn, inText, clickFunc) {
+            btn.innerText = inText;
+            btn.onclick = clickFunc;
+        }
+
+        //這方法不適合直接改onclick
+        // function functionMusic() {
+        //     isPlayPause = !isPlayPause;
+        //     if (isPlayPause) {
+        //         vAudioPlayer.play();
+        //         btnPlay.innerText = ";";
+        //     }
+        //     else {
+        //         vAudioPlayer.pause();
+        //         btnPlay.innerText = "4";
+        //     }
+        // }
+
+        function stopMusic() {
+            // JS可以直接去改onclick的內容，所以就不要用以前的寫法了
+            // vAudioPlayer.pause();
+            // btnPlay.innerText = "4";
+            // isPlayPause = false;
+            pauseMusic();
+            vAudioPlayer.currentTime = 0; // 重置到開始
+            //progressBar.value = 0; // 重置進度條
+        }
+        //上一首
+        function backStart() {
+            vAudioPlayer.currentTime = 0; // 重置到開始
+            //btnPlay.innerText="4";
+        }
+        //跳到結束時間(下一首？)
+        function forWardEnd() {
+            vAudioPlayer.currentTime = 0; // 重置到開始
+            //btnPlay.innerText="4";
+        }
+        // 直接在onclick裡面帶參數（神經病-.-）
+        function funcChangeTime(sec) {
+            vAudioPlayer.currentTime += sec;
+        }
+        // function backMusic() {
+        //     vAudioPlayer.currentTime -= 10;
+        // }
+        // function forWardMusic() {
+        //     vAudioPlayer.currentTime += 10;
+        // }
+        function muteVolume() {
+            controlmute("X", unmuteVolume);
+        }
+        function unmuteVolume() {
+            controlmute("V", muteVolume);
+        }
+        function controlmute(text, click) {
+            btnMute.innerText = text;
+            vAudioPlayer.muted = !vAudioPlayer.muted;
+            btnMute.onclick = click;
+        }
+        function setVolume(vol) {
+            vAudioPlayer.volume = (vAudioPlayer.volume * 100 + vol) / 100;
+            //因為超過1.0會有warning，所以加判斷
+            // if (vAudioPlayer.volume + vol > 1.0)
+            //     vAudioPlayer.volume = 1.0;
+            // else if (vAudioPlayer.volume + vol < 0.0)
+            //     vAudioPlayer.volume = 0.0;
+            // else
+            //     vAudioPlayer.volume += vol;
+        }
+        function changeVolume(vol) {
+            vAudioPlayer.volume = vol;
+        }
+        function toEndMusic() {
+            vAudioPlayer.currentTime = vAudioPlayer.ended;
+        }
+        function repeatMusic() {
+            if (repeatMusic == 1) {
+                //點了重覆播放
+                vAudioPlayer.loop = true;
+                repeatMusic = 2;
+            }
+            else if (repeatMusic == 2) {
+                vAudioPlayer.loop = false;
+                repeatMusic = 3;
+                // TODO：整個曲單重覆播
+            }
+            else {
+                vAudioPlayer.loop = false;
+                repeatMusic = 1;
+            }
+        }
+    </script>
+</body>
+
+</html>
