@@ -1,0 +1,14 @@
+.jumbotron {
+    background-color: rgb(95, 120, 190);
+    background-image: url('photo/00.jpg');
+    background-repeat: round;
+}
+
+small,
+.small {
+    font-size: 0.7em;
+}
+
+.h1Shadow {
+    text-shadow: 3px 3px 2px black;
+}

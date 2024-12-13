@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h3>基本使用</h3>
+        <div class="row">
+            <div class="col-4 bg-danger">col 1</div>
+            <div class="col-4 bg-info">col 2</div>
+            <div class="col-4 bg-warning">col 3</div>
+        </div>
+        <div class="row">
+            <div class="col-3 bg-danger">col 1</div>
+            <div class="col-2 bg-info">col 2</div>
+            <div class="col-2 bg-warning">col 3</div>
+            <div class="col-5 bg-primary">col 4</div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col bg-danger">col 1</div>
+            <div class="col bg-info">col 2</div>
+            <div class="col bg-warning">col 3</div>
+            <div class="col bg-danger">col 4</div>
+            <div class="col bg-info">col 5</div>
+            <div class="col bg-warning">col 6</div>
+            <div class="col bg-danger">col 7</div>
+
+        </div>
+        <hr>
+        <h3>斷點</h3>
+        <!-- md(小解析度)是切3欄(有一個會被推到第二列)，xl大解析度是6欄(但案例只有4欄，所以排不滿) -->
+        <div class="row">
+            <div class="col-md-4 col-xl-2 bg-danger">col 1</div>
+            <div class="col-md-4 col-xl-2 bg-info">col 2</div>
+            <div class="col-md-4 col-xl-2 bg-warning">col 3</div>
+            <div class="col-md-4 col-xl-2 bg-primary">col 4</div>
+        </div>
+        <hr>
+        <h3>同列多欄</h3>
+        <div class="row">
+            <div class="bg-success col-6">col 1</div>
+            <div class="bg-secondary col-5">col 2</div>
+            <div class="bg-primary col-4">col 3</div>
+            <div class="bg-danger col-10">col 4</div>
+        </div>
+        <div class="row">
+            <div class="bg-success col">col 1</div>
+            <div class="bg-secondary col">col 2</div>
+            <div class="bg-primary col">col 3</div>
+            <div class="bg-dark w-50">aaa</div>
+            <div class="bg-danger col">col 4</div>
+            <div class="bg-warning col">col 5</div>
+        </div>
+        <hr>
+        <h3>列斷點(BS 5才有)</h3>
+        <div class="row row-cols-2">
+            <div class="bg-success">col 1</div>
+            <div class="bg-secondary">col 2</div>
+            <div class="bg-primary">col 3</div>
+            <div class="bg-danger">col 4</div>
+        </div>
+        <hr>
+        <div class="row row-cols-3">
+            <div class="bg-success">col 1</div>
+            <div class="bg-secondary">col 2</div>
+            <div class="bg-primary">col 3</div>
+            <div class="bg-danger">col 4</div>
+        </div>
+        <hr>
+        <div class="row row-cols-auto">
+            <div class="bg-success">col</div>
+            <div class="bg-secondary">col 2</div>
+            <div class="bg-primary">co</div>
+            <div class="bg-danger">col 4</div>
+            <div class="bg-success">c</div>
+            <div class="bg-secondary">col 2</div>
+            <div class="bg-primary">1234546878412313</div>
+            <div class="bg-danger">col 4asedyudfkcgfhkfdhwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwhuewutouyhlhjkbhvgngf</div>
+        </div>
+        <hr>
+        <!-- xl解析度才會三欄換行剩下情況就是auto排版(須要多寬就給多寬) -->
+        <div class="row row-cols-xl-3 row-cols-auto ">
+            <div class="bg-success">col</div>
+            <div class="bg-secondary">col 2</div>
+            <div class="bg-primary">co</div>
+            <div class="bg-danger">col 4</div>
+            <div class="bg-success">c</div>
+            <div class="bg-secondary">col 2</div>
+            <div class="bg-primary">1234546878412313</div>
+            <div class="bg-danger">col 4asedyudfkcgfhkfdhwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwhuewutouyhlhjkbhvgngf</div>
+        </div>
+    </div>
+</body>
+
+</html>

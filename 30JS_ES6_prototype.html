@@ -54,14 +54,18 @@
             const week = ["日", "一", "二", "三", "四", "五", "六"];
             return "民國" + (this.getFullYear() - 1911) + "年 西元" + this.getFullYear() + "年 " + (this.getMonth() + 1) + "月 " + this.getDate() + "日 星期" + week[this.getDay()];
         }
-        // myDate.timeFormat
-        //console.log(mDate.timeFormat());
-        let getNowTime = () => {
-            let myDate = new Date();
-            clock.innerText = myDate.dateFormat() + ":" + myDate.timeFormat();
-            setTimeout(getNowTime, 1000);
+        Date.prototype.getNowTime = function () {
+            //clock.innerText = this.dateFormat() + ":" + this.timeFormat();
+            return this.dateFormat() + ":" + this.timeFormat();
+            //setTimeout(getNowTime, 1000);
         }
-        getNowTime();
+
+        // let getNowTime = () => {
+        //     let myDate = new Date();
+        //     clock.innerText = myDate.dateFormat() + ":" + myDate.timeFormat();
+        //     setTimeout(getNowTime, 1000);
+        // }
+        // getNowTime();
     </script>
 </body>
 
