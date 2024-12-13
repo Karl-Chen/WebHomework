@@ -1,0 +1,124 @@
+:root{
+    --vol-thumb-appearance: none;
+    --vol-thumb-background-color: black;
+    --vol-thumb-width: 25px;
+    --vol-thumb-height: 20px;
+    --vol-thumb-border-radius: 15px;
+    --currenttime-thumb-background-color: rgb(111, 18, 148);
+    --currenttime-thumb-border-radius: 25px;
+}
+
+#controlPanel {
+    margin: auto;
+    width: 610px;
+    border: 5px solid rgb(90, 46, 192);
+
+}
+#controlPanel span {
+    margin-left: 6px;
+    font-size: 3rem;
+    cursor: pointer;
+    font-family: Webdings;
+    border: 1px solid black;
+}
+#controlPanel select {
+    margin-left: 6px;
+    margin-top: 6px;
+    /* padding-top: 10px; */
+    font-size: 2.2rem;
+    width: 85%;
+    height: 3rem;
+    cursor: pointer;
+    font-family: Webdings;
+    border: 1px solid black;
+}
+#controlPanel img {
+    width: 10%;
+    margin-top: 6px;
+    margin-right: 3px;
+    margin-left: 3px;
+    border: 1px solid black;
+}
+#controlPanel input:nth-of-type(1) {
+    appearance: none;
+    width: 80%;
+    height: 8px;
+    border: 2px solid rgb(54, 18, 138);
+    background-color: transparent;
+}
+
+#controlPanel input:nth-of-type(1):focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+#controlPanel input:nth-of-type(1):focus::-moz-range-thumb {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  }
+
+#controlPanel input:nth-of-type(1)::-webkit-slider-thumb {
+    appearance: var(--vol-thumb-appearance);
+    background-color: var(--vol-thumb-background-color);
+    width: var(--vol-thumb-width);
+    height: var(--vol-thumb-height);
+    border-radius: var(--vol-thumb-border-radius);
+
+}
+#controlPanel input:nth-of-type(1)::-moz-range-thumb {
+    appearance: var(--vol-thumb-appearance);
+    background-color: var(--vol-thumb-background-color);
+    width: var(--vol-thumb-width);
+    height: var(--vol-thumb-height);
+    border-radius: var(--vol-thumb-border-radius);
+
+}
+
+
+#controlPanel input:nth-of-type(2) {
+    border: 2px solid rgb(14, 81, 126);
+    border-radius: 15px;
+    height: 1.8rem;
+    background-color: green;
+    color: wheat;
+}
+
+#controlPanel input:nth-of-type(3) {
+    border: 2px solid rgb(14, 81, 126);
+    border-radius: 15px;
+    height: 1.8rem;
+    background-color: red;
+    color: wheat;
+}
+
+#controlPanel input:nth-of-type(4) {
+    width: 35px;
+    height: 1.8rem;
+}
+
+#controlPanel input:nth-of-type(5) {
+    appearance: none;
+    width: 97%;
+    height: 8px;
+    border: 2px solid rgb(71, 10, 10);
+}
+
+#controlPanel input:nth-of-type(5)::-webkit-slider-thumb {
+    appearance: var(--vol-thumb-appearance);
+    background-color: var(--currenttime-thumb-background-color);
+    width: var(--vol-thumb-width);
+    height: var(--vol-thumb-height);
+    border-radius: var(--currenttime-thumb-border-radius);
+
+}
+#controlPanel input:nth-of-type(5)::-moz-range-thumb {
+    appearance: var(--vol-thumb-appearance);
+    background-color: var(--currenttime-thumb-background-color);
+    width: var(--vol-thumb-width);
+    height: var(--vol-thumb-height);
+    border-radius: var(--currenttime-thumb-border-radius);
+
+}
+
+#controlPanel div {
+    margin: auto;
+    text-align: center;
+    font-size: 2rem;
+}
